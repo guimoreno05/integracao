@@ -4,9 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 
 public final class CommonUtilities {
+
 	public static final String SENDER_ID = "796632224584";
-	public static final String TAG = "UFG GCM";
+
+	public static final String TAG = "FastMessage";
+
 	public static final String DISPLAY_MESSAGE_ACTION = "br.ufg.integracao.gcm.DISPLAY_MESSAGE";
+
 	public static final String EXTRA_MESSAGE = "message";
 
 	public static void displayMessage(Context context, String message) {

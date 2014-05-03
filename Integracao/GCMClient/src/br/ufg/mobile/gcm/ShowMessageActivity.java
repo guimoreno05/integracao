@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
-import br.ufg.mobile.gcm.R;
+import br.ufg.integracao.gcm.R;
 import br.ufg.mobile.gcm.utilities.AlertDialogManager;
 import br.ufg.mobile.gcm.utilities.WakeLocker;
 

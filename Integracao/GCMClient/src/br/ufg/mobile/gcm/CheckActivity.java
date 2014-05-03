@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-import br.ufg.mobile.gcm.R;
+import br.ufg.integracao.gcm.R;
 import br.ufg.mobile.gcm.utilities.AlertDialogManager;
 import br.ufg.mobile.gcm.utilities.ConnectionDetector;
 import static br.ufg.mobile.gcm.utilities.CommonUtilities.SENDER_ID;

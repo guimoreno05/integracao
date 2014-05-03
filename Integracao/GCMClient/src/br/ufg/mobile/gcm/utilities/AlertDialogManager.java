@@ -3,7 +3,7 @@ package br.ufg.mobile.gcm.utilities;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import br.ufg.mobile.gcm.R;
+import br.ufg.integracao.gcm.R;
 
 public class AlertDialogManager {
 

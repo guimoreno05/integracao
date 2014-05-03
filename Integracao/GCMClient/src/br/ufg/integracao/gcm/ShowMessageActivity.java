@@ -15,34 +15,42 @@ import android.widget.TextView;
 import android.widget.Toast;
 import br.ufg.integracao.gcm.utilities.AlertDialogManager;
 import br.ufg.integracao.gcm.utilities.WakeLocker;
-import br.ufg.mobile.gcm.R;
 
 import com.google.android.gcm.GCMRegistrar;
 
 public class ShowMessageActivity extends Activity {
+
 	TextView lblMessage;
+
 	AlertDialogManager alert = new AlertDialogManager();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_show_message);
+
 		GCMRegistrar.checkDevice(this);
+
 		GCMRegistrar.checkManifest(this);
+
 		lblMessage = (TextView) findViewById(R.id.lblMessage);
 
 		if (getIntent().getStringExtra(EXTRA_MESSAGE) != null) {
-			lblMessage.setTextColor(Color.YELLOW);
-			lblMessage.setText(getIntent().getStringExtra(EXTRA_MESSAGE) + "\n");
+			lblMessage.setTextColor(Color.MAGENTA);
+			lblMessage
+					.setText(getIntent().getStringExtra(EXTRA_MESSAGE) + "\n");
 		}
 
 		registerReceiver(mHandleMessageReceiver, new IntentFilter(
 				DISPLAY_MESSAGE_ACTION));
 
 		final String regId = GCMRegistrar.getRegistrationId(this);
+		System.err.print(regId);
+
 		if (regId.equals("")) {
-			GCMRegistrar.register(this, SENDER_ID);
+				GCMRegistrar.register(this, SENDER_ID);
 		} else {
+
 			if (GCMRegistrar.isRegisteredOnServer(this)) {
 				return;
 			} else {
@@ -56,8 +64,10 @@ public class ShowMessageActivity extends Activity {
 		public void onReceive(Context context, Intent intent) {
 			String newMessage = intent.getExtras().getString(EXTRA_MESSAGE);
 			WakeLocker.acquire(getApplicationContext());
+
 			lblMessage.append(newMessage + "\n");
-			Toast.makeText(getApplicationContext(), "Nova Mensagem: " + newMessage, Toast.LENGTH_LONG).show();
+			Toast.makeText(getApplicationContext(),
+					"Nova Mensagem: " + newMessage, Toast.LENGTH_LONG).show();
 			WakeLocker.release();
 		}
 	};
