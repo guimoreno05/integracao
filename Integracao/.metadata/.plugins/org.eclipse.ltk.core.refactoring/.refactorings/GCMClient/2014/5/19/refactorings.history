@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;GCMClient&apos;&#x0D;&#x0A;- Original project: &apos;GCMClient&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     GCMClient.apk&#x0D;&#x0A;     GCMService.apk&#x0D;&#x0A;     ic_launcher.png" description="Delete elements" element1="bin/GCMService.apk" element2="bin/GCMClient.apk" element3="ic_launcher.png" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="3" stamp="1399588328856" subPackages="false" version="1.0"/>
+</session>
